@@ -6,6 +6,7 @@ import logo from '../assets/images/logo.svg';
 import List from './list';
 import AddItem from './add_item';
 import dummyList from '../data/to_do_list';
+import { randomString } from '../helpers';
 
 class App extends Component {
     state = {
@@ -19,11 +20,14 @@ class App extends Component {
     addItem = (item) => {
         const {list} = this.state;
 
+        item._id = randomString();
+
         this.setState({
-            list: [item,...list]
+            list: [{...item,_id: randomString()}, ...list]
         })
         
     }
+
 
     getListData() {
         // Call server to get list data
