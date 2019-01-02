@@ -85,7 +85,7 @@ class App extends Component {
                         return <List {...props} toggle={this.toggleComplete} delete={this.deleteItem} toDos={list}/>
                     }}/>
                     <Route path="/add-item" render={ (props) => {
-                        return <AddItem {...props }add={this.addItem} />;
+                        return <AddItem {...props } add={this.addItem} />;
                     }}/>
                     <Route path="/item/:item_id" component={ViewItem} />
 
